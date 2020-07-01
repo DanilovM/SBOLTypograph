@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+	<channel>
+		<title>SBOL Typograph</title>
+		<link>http://sboltypograph.alius.ru/appcast.xml</link>
+		<description>Плагин для Sketch, исправляет тексты на основе редполитики СБОЛ</description>
+		<language>en</language>
+		<item>
+			<title>Version 1.0.1</title>
+			<description>Исправления в замене кавычек</description>
+			<enclosure url="http://sboltypograph.alius.ru/download/sboltypograph-1.0.1.zip" sparkle:version="1.0.1"/>
+		</item>
+	</channel>
+</rss>

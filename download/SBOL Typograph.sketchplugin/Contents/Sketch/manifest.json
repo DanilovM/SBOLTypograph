@@ -1,0 +1,26 @@
+{
+    "name": "SBOL Typograph",
+    "description": "Исправляем тексты на основе редполитики СБОЛ",
+    "author": "Mikhail Danilov",
+    "authorEmail": "danilov.m.e@sberbank.ru",
+    "homepage": "http://sboltypograph.alius.ru/",
+    "version": "1.0.0",
+    "identifier": "com.sketchapp.plugins.sboltypograph",
+    "appcast": "https://raw.githubusercontent.com/m-danilov/SBOLTypograph/master/appcast.xml",
+    "icon": "icon.png",
+    "commands": [{
+        "name": "SBOL Typograph",
+        "identifier": "open",
+        "script": "sboltypograph.js",
+        "handlers": {
+            "run": "onRun"
+        }
+    }],
+    "menu": {
+        "title": "SBOL Typograph",
+        "items": [
+            "open"
+        ],
+        "isRoot": true
+    }
+}
