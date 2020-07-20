@@ -8,12 +8,12 @@
 		<item>
 			<title>Version 1.0.1</title>
 			<description>Исправления в замене кавычек</description>
-			<enclosure url="https://danilovm.github.io/SBOLTypograph/download/SBOLTypograph-1.0.1.zip" sparkle:version="1.0.1"/>
+			<enclosure url="https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.1.zip" sparkle:version="1.0.1"/>
 		</item>
 		<item>
 			<title>Version 1.0.0</title>
 			<description>Первая версия плагина</description>
-			<enclosure url="https://danilovm.github.io/SBOLTypograph/download/SBOLTypograph-1.0.0.zip" sparkle:version="1.0.0"/>
+			<enclosure url="https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.0.zip" sparkle:version="1.0.0"/>
 		</item>
 	</channel>
 </rss>
