@@ -733,9 +733,9 @@ var onRun = function (context) {
             })
 
             // Если это индекс, возвращаем как было, 6 цифр слитно, за ними запятая с пробелом
-            stringToParse = stringToParse.replace(/(\d{3})\u00A0(\d{3})(\,\u0020)/gm, function (match, p1, p2, p3) {
+            stringToParse = stringToParse.replace(/(^|\D)(\d{3})\u00A0(\d{3})(\,\u0020)/gm, function (match, p1, p2, p3, p4) {
                 _counterAddNoBreakSpace--
-                return p1 + p2 + p3
+                return p1 + p2 + p3 + p4
             })
 
             // Если это четырёхзначный код города в телефонном номере, возвращаем как было, 
@@ -743,6 +743,12 @@ var onRun = function (context) {
             stringToParse = stringToParse.replace(/(\d\u00A0\()(\d)\u00A0(\d{3})(\)\u00A0\d)/gm, function (match, p1, p2, p3, p4) {
                 _counterAddNoBreakSpace--
                 return p1 + p2 + p3 + p4
+            })
+
+            // Если это 20-ти значное число, предполагаем, что это номер счёта и  возвращаем как было, 20 цифр слитно
+            stringToParse = stringToParse.replace(/(^|\D)(\d{2})\u00A0(\d{3})\u00A0(\d{3})\u00A0(\d{3})\u00A0(\d{3})\u00A0(\d{3})\u00A0(\d{3})($|\D)/gm, function (match, p1, p2, p3, p4, p5, p6, p7, p8) {
+                _counterAddNoBreakSpace = _counterAddNoBreakSpace - 6
+                return p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8
             })
         }
 
@@ -958,7 +964,7 @@ var onRun = function (context) {
             })
 
             // офлайн
-            stringToParse = stringToParse.replace(/((^|\n|[\.\!\?\…][\u0020\u00A0])(\u2014[\u0020\u00A0])?)?(оффлайн|офлайн|офф-лайн|оф-лайн)/gmi, function (match, p1, p2, p3, p4) {
+            stringToParse = stringToParse.replace(/(((^|\n|[\.\!\?\…][\u0020\u00A0])(\u2014[\u0020\u00A0])?)|((^|\n|[\.\!\?\…][\u0020\u00A0]?)\u00AB))?(оффлайн|офлайн|офф-лайн|оф-лайн)/gmi, function (match, p1, p2, p3, p4) {
                 var offline
                 if (p1 !== undefined) {
                     offline = 'Офлайн'
@@ -973,7 +979,7 @@ var onRun = function (context) {
             })
 
             // онлайн
-            stringToParse = stringToParse.replace(/((^|\n|[\.\!\?\…][\u0020\u00A0])(\u2014[\u0020\u00A0])?)?(оннлайн|онлайн|онн-лайн|он-лайн)/gmi, function (match, p1, p2, p3, p4) {
+            stringToParse = stringToParse.replace(/(((^|\n|[\.\!\?\…][\u0020\u00A0])(\u2014[\u0020\u00A0])?)|((^|\n|[\.\!\?\…][\u0020\u00A0]?)\u00AB))?(оннлайн|онлайн|онн-лайн|он-лайн)/gmi, function (match, p1, p2, p3, p4) {
                 var online
                 if (p1 !== undefined) {
                     online = 'Онлайн'
