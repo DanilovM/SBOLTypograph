@@ -20,16 +20,16 @@
                 <div class="header__left">
                     <img src="sboltypograph_logo.svg" class="header__logo">
                     <div class="header__titleContent">
-                        <h1 class="header__title">SBOL Typograph</h1>
-                        <div class="header__titleTxt">Плагин для&nbsp;Sketch, исправляет тексты на&nbsp;основе редполитики&nbsp;СБОЛ</div>
+                        <h1 class="header__title">SBOL&nbsp;Typograph</h1>
+                        <div class="header__titleTxt">Типографируем текст в&nbsp;Sketch</div>
                     </div>
                 </div>
                 <div class="header__right">
-                    <a href='https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.1.zip' class='header__download'>Скачать <small>1.0.1</small></a>
+                    <a href='https://danilovm.github.io/SBOLTypographSketch/download/sboltypograph-1.0.2.zip' class='header__download'>Скачать <small>1.0.2</small></a>
                 </div>
 
             </div>
-            <div class="header__titleTxt extra">Плагин для&nbsp;Sketch, исправляет тексты на&nbsp;основе редполитики&nbsp;СБОЛ</div>
+            <div class="header__titleTxt extra">Типографируем текст в&nbsp;Sketch</div>
         </div>
     </header>
 
@@ -38,15 +38,17 @@
             <img src="screenshot.png" class="screenshot">
             <h2>Возможности</h2>
 
-            <p>Плагин форматирует текст в&nbsp;макетах Sketch для&nbsp;приведения его&nbsp;к&nbsp;правильному виду с&nbsp;точки зрения типографики и&nbsp;редполитики Сбербанк&nbsp;Онлайн.</p>
-            <p>Помогает автоматически расставить неразрывные пробелы, убрать висячие предлоги и&nbsp;союзы, исправить "простые кавычки" на&nbsp;«ёлочки» и&nbsp;„лапки“. Правильно расставит дефис, длинное и&nbsp;среднее тире, уберёт точку в&nbsp;заголовке,
-                приведёт телефонные номера к&nbsp;правильному виду. Исправит слова «вы», «банк», «приложение», «условия», «сайт» на&nbsp;нижний регистр, разобьёт длинные числа по&nbsp;разрядам и&nbsp;заменит букву «е» на&nbsp;«ё» в&nbsp;словах, где она
-                должна употребляться.</p>
+            <p>Плагин для&nbsp;исправления и&nbsp;форматирования текста в&nbsp;Sketch макетах на&nbsp;основе правил типографики со&nbsp;встроенным Ёфикатором.</p>
+            <p>Заменит букву «е» на&nbsp;«ё» в&nbsp;словах, где&nbsp;она&nbsp;должна употребляться. 
+                Автоматически расставит неразрывные пробелы и&nbsp;уберёт висячие предлоги и&nbsp;союзы. 
+                Исправит "простые кавычки" на&nbsp;«ёлочки» и&nbsp;„лапки“, а&nbsp;знак минуса на&nbsp;дефис, длинное или&nbsp;среднее тире. 
+                Разобьёт длинные числа перед&nbsp;знаком валюты по&nbsp;разрядам и&nbsp;заменит в&nbsp;них&nbsp;точку на&nbsp;запятую. 
+                Приведёт телефонные номера к&nbsp;нужному формату.</p>
         </section>
 
         <section>
             <h2>Установка</h2>
-            <p><a href="https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.1.zip">Скачайте</a> последнюю версию <samp>1.0.1</samp>, распакуйте архив и&nbsp;дважды кликнув файл <samp>SBOL Typograph.sketchplugin</samp> установите плагин.</p>
+            <p><a href="https://danilovm.github.io/SBOLTypographSketch/download/sboltypograph-1.0.2.zip">Скачайте</a> последнюю версию <samp>1.0.2</samp>, распакуйте архив и&nbsp;дважды кликнув файл <samp>SBOL Typograph.sketchplugin</samp> установите плагин.</p>
         </section>
 
         <section>
@@ -134,12 +136,12 @@
                     </div>
                 </div>
                 <div class="pluginRules__item">
-                    <div class="pluginRules__title">Числа</div>
+                    <div class="pluginRules__title">Числа перед знаком валюты</div>
                     <div class="pluginRules__content">
                         <ul class="listBlock">
-                            <li>Разбивка длинных чисел по&nbsp;разрядам <samp>2345123 ⟶ 2 345 123</samp></li>
-                            <li>Замена в&nbsp;числах точки на&nbsp;запятую <samp>143.56 ⟶ 143,56</samp></li>
-                            <li>После <em>тыс.</em>&nbsp;должна быть точка, а&nbsp;после <em>млн</em>, <em>млрд</em>, <em>трлн</em> точки быть не&nbsp;должно <samp>5 тыс., 2 млн, 1 млрд, 3 трлн</samp></li>
+                            <li>Разбивка длинных чисел по&nbsp;разрядам <samp>2345123$ ⟶ 2&nbsp;345&nbsp;123&nbsp;$</samp></li>
+                            <li>Замена в&nbsp;числах точки на&nbsp;запятую <samp>143.56&nbsp;₽ ⟶ 143,56&nbsp;₽</samp></li>
+                            <li>После <em>тыс.</em>&nbsp;должна быть точка, а&nbsp;после <em>млн</em>, <em>млрд</em>, <em>трлн</em> точки быть не&nbsp;должно <samp>5&nbsp;тыс., 2&nbsp;млн, 1&nbsp;млрд, 3&nbsp;трлн</samp></li>
                         </ul>
                     </div>
                 </div>
@@ -147,10 +149,10 @@
                     <div class="pluginRules__title">Валюта</div>
                     <div class="pluginRules__content">
                         <ul class="listBlock">
-                            <li>Замена <em>USD и&nbsp;EUR</em> на&nbsp;<em>$ и&nbsp;€</em> <samp>20usd ⟶ 20 $</samp></li>
-                            <li>Замена <em>Р, р., руб., RUR, RUB</em> на&nbsp;<em>₽</em> <samp>789 руб. ⟶ 789 ₽</samp></li>
-                            <li>Перенос копеек в&nbsp;основную сумму <samp>45 руб. 5 коп. ⟶ 45,05 ₽</samp></li>
-                            <li>Перенос знака валюты после цифр и&nbsp;отделение его&nbsp;неразрывным пробелом <samp>$ 109 ⟶ 109 $, 109$ ⟶ 109 $</samp></li>
+                            <li>Замена <em>USD и&nbsp;EUR</em> на&nbsp;<em>$ и&nbsp;€</em> <samp>20usd ⟶ 20&nbsp;$</samp></li>
+                            <li>Замена <em>Р, р., руб., RUR, RUB</em> на&nbsp;<em>₽</em> <samp>789&nbsp;руб. ⟶ 789&nbsp;₽</samp></li>
+                            <li>Перенос копеек в&nbsp;основную сумму <samp>45 руб. 5 коп. ⟶ 45,05&nbsp;₽</samp></li>
+                            <li>Перенос знака валюты после цифр и&nbsp;отделение его&nbsp;неразрывным пробелом <samp>$ 109 ⟶ 109&nbsp;$, 109$ ⟶ 109&nbsp;$</samp></li>
                         </ul>
                     </div>
                 </div>
