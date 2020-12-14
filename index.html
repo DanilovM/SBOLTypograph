@@ -5,190 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>SBOL Typograph</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" type="text/css" href="css.css" />
+    <meta name="description" content="Инструмент для исправления и форматирования текста на основе правил типографики со встроенным Ёфикатором" />
     <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
-    <meta name="theme-color" content="#bddfdf">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Kanit:wght@600&display=swap');
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #363636;
+            background: linear-gradient(to bottom right, #e3ffe7 0%, #f1f0eb 80%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .typograph {
+            padding: 1px 0;
+            margin: -1px auto;
+            width: 96%;
+            display: flex;
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .typograph__logoPlace {
+            margin-bottom: 5rem;
+            overflow: hidden;
+            max-width: 30rem;
+            position: relative;
+            display: inline-block;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .typograph__logo {
+            display: inline-block;
+            background-color: #21A038;
+            padding: 0.2rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .typograph__name {
+            font-family: 'Kanit', sans-serif;
+            color: #21A038;
+            font-weight: 600;
+            font-size: 3.5rem;
+            letter-spacing: .05rem;
+            font-variant: small-caps;
+            white-space: nowrap;
+        }
+
+        @media screen and (max-width: 500px),
+        (max-height: 500px) {
+            .typograph {
+                padding: 1rem 0;
+                height: auto;
+            }
+
+            .typograph__logoPlace {
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+
+            .typograph__name {
+                font-size: 270%;
+            }
+        }
+
+
+        .typograph__desc {
+            text-align: justify;
+            width: 100%;
+            margin-top: .5rem;
+            color: #363636;
+            line-height: 1.5;
+        }
+
+        .typograph__cardPlace {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -ms-flex-wrap: wrap;
+        }
+
+        .typograph__card {
+            border: 0;
+            width: 12rem;
+            text-align: center;
+            color: #363636;
+            display: flex;
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 0 4rem rgba(0, 0, 0, .1);
+            margin: 2rem;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+        }
+
+        .typograph__card:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 6rem rgba(0, 0, 0, .2);
+        }
+
+        .typograph__cardIcon {
+            margin-bottom: 1rem;
+        }
+
+        .typograph__cardIcon img {
+            width: 2rem;
+            height: 2rem
+        }
+    </style>
 </head>
 
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="header__content">
-                <div class="header__left">
-                    <img src="sboltypograph_logo.svg" class="header__logo">
-                    <div class="header__titleContent">
-                        <h1 class="header__title">SBOL Typograph</h1>
-                        <div class="header__titleTxt">Плагин для&nbsp;Sketch, исправляет тексты на&nbsp;основе редполитики&nbsp;СБОЛ</div>
-                    </div>
-                </div>
-                <div class="header__right">
-                    <a href='https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.1.zip' class='header__download'>Скачать <small>1.0.1</small></a>
-                </div>
-
+    <div class="typograph">
+        <div class="typograph__logoPlace">
+            <div class=typograph__logo>
+                <svg width="56" height="56" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.7593 84L16.04 69.5332L24.6947 55H17.913L9 69.6659L17.7839 84H24.7593Z" fill="white" />
+                    <path d="M39.1622 84L30.443 69.5332L39.0976 55H32.316L23.403 69.6659L32.1868 84H39.1622Z"
+                        fill="white" />
+                    <path
+                        d="M79.3354 86.7956V80.3842H57.8925V66.7109H77.3332V60.4304H57.8925V47.4114H79.3354V41H50.6587V86.7956H79.3354Z"
+                        fill="white" />
+                    <path d="M109.691 84L118.411 69.6659L109.498 55H102.716L111.435 69.5332L102.651 84H109.691Z"
+                        fill="white" />
+                    <path d="M95.2884 84L104.008 69.6659L95.0947 55H88.313L97.0323 69.5332L88.2484 84H95.2884Z"
+                        fill="white" />
+                    <path
+                        d="M58 37C60.2091 37 62 35.2091 62 33C62 30.7909 60.2091 29 58 29C55.7909 29 54 30.7909 54 33C54 35.2091 55.7909 37 58 37Z"
+                        fill="white" />
+                    <path
+                        d="M71 37C73.2091 37 75 35.2091 75 33C75 30.7909 73.2091 29 71 29C68.7909 29 67 30.7909 67 33C67 35.2091 68.7909 37 71 37Z"
+                        fill="white" />
+                </svg>
             </div>
-            <div class="header__titleTxt extra">Плагин для&nbsp;Sketch, исправляет тексты на&nbsp;основе редполитики&nbsp;СБОЛ</div>
+            <div class="typograph__name">SBOL Typograph</div>
+            <div class="typograph__desc">Инструмент для&nbsp;исправления и&nbsp;форматирования текста на&nbsp;основе
+                правил типографики со&nbsp;встроенным Ёфикатором</div>
         </div>
-    </header>
 
-    <div class="container">
-        <section>
-            <img src="screenshot.png" class="screenshot">
-            <h2>Возможности</h2>
+        <div class="typograph__cardPlace">
 
-            <p>Плагин форматирует текст в&nbsp;макетах Sketch для&nbsp;приведения его&nbsp;к&nbsp;правильному виду с&nbsp;точки зрения типографики и&nbsp;редполитики Сбербанк&nbsp;Онлайн.</p>
-            <p>Помогает автоматически расставить неразрывные пробелы, убрать висячие предлоги и&nbsp;союзы, исправить "простые кавычки" на&nbsp;«ёлочки» и&nbsp;„лапки“. Правильно расставит дефис, длинное и&nbsp;среднее тире, уберёт точку в&nbsp;заголовке,
-                приведёт телефонные номера к&nbsp;правильному виду. Исправит слова «вы», «банк», «приложение», «условия», «сайт» на&nbsp;нижний регистр, разобьёт длинные числа по&nbsp;разрядам и&nbsp;заменит букву «е» на&nbsp;«ё» в&nbsp;словах, где она
-                должна употребляться.</p>
-        </section>
+            <a href="https://danilovm.github.io/SBOLTypographSketch/" target="_blank" class="typograph__card">
+                <div class="typograph__cardIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="63" height="57" viewBox="0 0 31 28">
+                        <path fill="#FDB300" d="M6.75.922L15.469 0l8.719.922L30.938 10 15.469 28 0 10z"></path>
+                        <path fill="#EA6C00" d="M6.266 10l9.203 18L0 10z"></path>
+                        <path fill="#EA6C00" d="M24.672 10l-9.204 18 15.469-18z"></path>
+                        <path fill="#FDAD00" d="M6.266 10h18.406l-9.203 18z"></path>
+                        <path fill="#FDD231" d="M15.469 0L6.75.922 6.266 10z"></path>
+                        <path fill="#FDD231" d="M15.468 0l8.719.922.484 9.078z"></path>
+                        <path fill="#FDAD00" d="M30.937 10L24.187.922 24.672 10zM0 10L6.75.922 6.266 10z"></path>
+                        <path fill="#FEEEB7" d="M15.469 0L6.266 10h18.406z"></path>
+                    </svg>
 
-        <section>
-            <h2>Установка</h2>
-            <p><a href="https://danilovm.github.io/SBOLTypograph/download/sboltypograph-1.0.1.zip">Скачайте</a> последнюю версию <samp>1.0.1</samp>, распакуйте архив и&nbsp;дважды кликнув файл <samp>SBOL Typograph.sketchplugin</samp> установите плагин.</p>
-        </section>
+                </div>Плагин для Sketch
+            </a>
 
-        <section>
-            <h2>Использование</h2>
-            <p>Выберите слой, группу или&nbsp;символ в&nbsp;котором хотите проверить текст и&nbsp;запустите плагин <b>SBOL Typograph</b>. Если ничего не&nbsp;выбрано, проверка и&nbsp;замена происходит во&nbsp;всех элементах страницы.</p>
-        </section>
+            <a href="https://www.figma.com/community/plugin/907888805660596065/SBOL-Typograph" target="_blank"
+                class="typograph__card">
+                <div class="typograph__cardIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="57" viewBox="0 0 38 57">
+                        <path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"></path>
+                        <path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"></path>
+                        <path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"></path>
+                        <path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"></path>
+                        <path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"></path>
+                    </svg>
 
-        <section>
-            <h2>Правила</h2>
-            <p>Правила, используемые в&nbsp;плагине.
-            </p>
-            <div class="pluginRules">
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Ёфикатор</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Замена буквы <em>е</em> на&nbsp;<em>ё</em> в&nbsp;словах, где&nbsp;она&nbsp;должна употребляться</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Кавычки</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Замена "простых кавычек" на&nbsp;«ёлочки» и&nbsp;„лапки“ <samp>«„Как это скучно!“&nbsp;— воскликнул я невольно»</samp></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Телефонные номера</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Приведение российских телефонных номеров к&nbsp;правильному формату</li>
-                            <samp>Федеральный номер: 8 (800) 555-55-50</samp>
-                            <samp>Городской номер: +7 (495) 500-55-50, +7 (4212) 79-40-35</samp>
-                            <samp>Короткий номер: 900</samp>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Тире</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>В&nbsp;начале строки или&nbsp;предложения, длинное тире + неразрывный пробел <samp>— Это я, почтальон Печкин.</samp></li>
-                            <li>Для&nbsp;диапазонов месяцев и&nbsp;дней недели используем среднее тире без&nbsp;пробелов <samp>январь–март, понедельник–суббота</samp></li>
-                            <li>Внутри текста используем неразрывный пробел + длинное тире <samp>А гений и злодейство — две вещи несовместные</samp></li>
-                            <li>Для&nbsp;диапазонов чисел используем среднее тире без&nbsp;пробелов <samp>2002–2009, XI–XII</samp></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Пунктуация</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Замена <em>!?</em> на&nbsp;<em>?!</em></li>
-                            <li>Замена <em>...?</em> на&nbsp;<em>?‥</em> и&nbsp;<em>...!</em> на&nbsp;<em>!‥</em></li>
-                            <li>Замена <em>?...</em> на&nbsp;<em>?‥</em> и&nbsp;<em>!...</em> на&nbsp;<em>!‥</em></li>
-                            <li>Замена <em>...</em> на&nbsp;знак многоточия </em>…</em>
-                            </li>
-                            <li>Заменяем несколько знаков <em>? ! . , ; : -</em> на&nbsp;один <samp>Готово!!! ⟶ Готово!</samp></li>
-                            <li>Перенос точки за&nbsp;закрывающуюся кавычку</li>
-                            <li>Удаление точки в&nbsp;конце одиночного предложения</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Лишние пробелы</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Удаление пробела после <em>« „ ( [</em></li>
-                            <li>Удаление пробела перед <em>. … : , ; ? ! » “ "" ) ]</em></li>
-                            <li>Удаление пробела между числом&nbsp;и&nbsp;<em>%</em> <samp>23%</samp></li>
-                            <li>Удаление пробелов в&nbsp;начале и&nbsp;конце строки</li>
-                            <li>Удаление двойных пробелов</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Строчные буквы</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Слова <em>вы, банк, приложение, условия, сайт</em> — со&nbsp;строчной буквы. С&nbsp;прописной буквы — если слово первое в&nbsp;предложении.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Числа</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Разбивка длинных чисел по&nbsp;разрядам <samp>2345123 ⟶ 2 345 123</samp></li>
-                            <li>Замена в&nbsp;числах точки на&nbsp;запятую <samp>143.56 ⟶ 143,56</samp></li>
-                            <li>После <em>тыс.</em>&nbsp;должна быть точка, а&nbsp;после <em>млн</em>, <em>млрд</em>, <em>трлн</em> точки быть не&nbsp;должно <samp>5 тыс., 2 млн, 1 млрд, 3 трлн</samp></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Валюта</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Замена <em>USD и&nbsp;EUR</em> на&nbsp;<em>$ и&nbsp;€</em> <samp>20usd ⟶ 20 $</samp></li>
-                            <li>Замена <em>Р, р., руб., RUR, RUB</em> на&nbsp;<em>₽</em> <samp>789 руб. ⟶ 789 ₽</samp></li>
-                            <li>Перенос копеек в&nbsp;основную сумму <samp>45 руб. 5 коп. ⟶ 45,05 ₽</samp></li>
-                            <li>Перенос знака валюты после цифр и&nbsp;отделение его&nbsp;неразрывным пробелом <samp>$ 109 ⟶ 109 $, 109$ ⟶ 109 $</samp></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Неразрывный пробел</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Неразрывный пробел между инициалами и&nbsp;фамилией. Инициалы слитно, затем неразрывный пробел и&nbsp;фамилия. Или&nbsp;фамилия, неразрывный пробел и&nbsp;слитно инициалы. <samp>А.А.&nbsp;Иванов, Петров К.П.</samp></li>
-                            <li>Неразрывные пробелы между словом и&nbsp;<em>и т.д., и т.п., и др.</em></li>
-                            <li>Неразрывный пробел между числом и&nbsp;следующим словом</li>
-                            <li>Неразрывный пробел перед <em>б, бы, ж, же, ли, ль</em></li>
-                            <li>Неразрывный пробел перед последним коротким словом в&nbsp;предложении или&nbsp;одиночной строке</li>
-                            <li>Неразрывный пробел после короткого слова</li>
-                            <li>Неразрывный пробел после <em>г., обл., кр., ст., пос., с., д., ул., пер., пр., пр-т., просп., пл., бул., б-р., наб., ш., туп., оф., кв., комн., под., мкр., уч., вл., влад., стр., корп., литер, эт., пгт., стр., гл., рис., илл.,
-                                ст., п., c., а, б, без, безо, будто, бы, в, во, ведь, вне, вот, всё, где, да, даже, для, до, если, есть, ещё, же, за, и, из, изо, из-за, из-под, или, иль, к, ко, как, ли, ли, либо, между, на, над, надо, не, ни, но, о, об,
-                                обо, около, оно, от, ото, перед, по, по-за, по-над, под, подо, после, при, про, ради, с, со, сквозь, так, также, там, тем, то, тогда, того, тоже, у, хоть, хотя, чего, через, что, чтобы, это, №, §, АО, ОАО, ЗАО, ООО, ПАО</em></li>
-                        </ul>
+                </div>Плагин для Figma
+            </a>
 
-                    </div>
-                </div>
-                <div class="pluginRules__item">
-                    <div class="pluginRules__title">Разное</div>
-                    <div class="pluginRules__content">
-                        <ul class="listBlock">
-                            <li>Правильное написание <em>Mastercard, Visa, Мир, Google Pay, Apple Pay, Push-уведомления, ПИН-код, QR-код, сим-карта, СVV-код, СVС-код, СVV2-код, СVС2-код, CVV, CVC, СМС, Wi-Fi, email, офлайн, онлайн, мск</em></li>
-                        </ul>
-                    </div>
-                </div>
+            <a href="https://danilovm.github.io/SBOLTypographJS/" target="_blank" class="typograph__card">
+                <div class="typograph__cardIcon">
+                    <svg width="64" height="57" viewBox="0 0 64 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39.3706 56.0666H24.4385L26.8928 48.0569H36.9162L39.3706 56.0666Z" fill="#ADACA7" />
+                        <path
+                            d="M63.8082 6.65973V42.3312C63.8082 46.0034 60.8234 48.991 57.1557 48.991H6.6525C2.98478 48.991 0 46.0034 0 42.3312V6.65973C0 2.98752 2.98478 3.89895e-09 6.6525 3.89895e-09H57.1557C60.8234 -0.000124621 63.8082 2.98739 63.8082 6.65973V6.65973Z"
+                            fill="#CBC9C2" />
+                        <path
+                            d="M60.0801 6.50534V38.6266C60.0801 40.2574 58.7541 41.5844 57.124 41.5844H6.6856C5.05551 41.5844 3.72949 40.2574 3.72949 38.6266V6.50534C3.72949 4.87462 5.05551 3.54761 6.6856 3.54761H57.124C58.7541 3.54761 60.0801 4.87462 60.0801 6.50534V6.50534Z"
+                            fill="#F1F0EB" />
+                        <path
+                            d="M44.207 55.1329H19.6017C19.0855 55.1329 18.667 55.5509 18.667 56.0664C18.667 56.582 19.0855 57 19.6017 57H44.207C44.7232 57 45.1416 56.582 45.1416 56.0664C45.1416 55.5509 44.7232 55.1329 44.207 55.1329Z"
+                            fill="#8F8F8B" />
+                        <path
+                            d="M57.3427 44H54.6573C54.2943 44 54 44.4477 54 45C54 45.5523 54.2943 46 54.6573 46H57.3427C57.7057 46 58 45.5523 58 45C58 44.4477 57.7057 44 57.3427 44Z"
+                            fill="#7AE647" />
+                        <rect x="21.125" y="11.4555" width="21.875" height="21.875" rx="3" fill="#21A038" />
+                        <path
+                            d="M26.6976 25.1274L25.5055 23.1495L26.6887 21.1625H25.7615L24.543 23.1676L25.7439 25.1274H26.6976Z"
+                            fill="white" />
+                        <path
+                            d="M28.6663 25.1274L27.4742 23.1495L28.6575 21.1625H27.7303L26.5117 23.1676L27.7126 25.1274H28.6663Z"
+                            fill="white" />
+                        <path
+                            d="M34.1589 25.5096V24.633H31.2273V22.7636H33.8852V21.905H31.2273V20.125H34.1589V19.2485H30.2383V25.5096H34.1589Z"
+                            fill="white" />
+                        <path
+                            d="M38.3092 25.1274L39.5013 23.1676L38.2827 21.1625H37.3555L38.5476 23.1495L37.3467 25.1274H38.3092Z"
+                            fill="white" />
+                        <path
+                            d="M36.3404 25.1274L37.5325 23.1676L36.3139 21.1625H35.3868L36.5789 23.1495L35.3779 25.1274H36.3404Z"
+                            fill="white" />
+                        <path
+                            d="M31.2422 18.7016C31.5442 18.7016 31.7891 18.4568 31.7891 18.1547C31.7891 17.8527 31.5442 17.6078 31.2422 17.6078C30.9402 17.6078 30.6953 17.8527 30.6953 18.1547C30.6953 18.4568 30.9402 18.7016 31.2422 18.7016Z"
+                            fill="white" />
+                        <path
+                            d="M33.0195 18.7016C33.3216 18.7016 33.5664 18.4568 33.5664 18.1547C33.5664 17.8527 33.3216 17.6078 33.0195 17.6078C32.7175 17.6078 32.4727 17.8527 32.4727 18.1547C32.4727 18.4568 32.7175 18.7016 33.0195 18.7016Z"
+                            fill="white" />
+                    </svg>
 
-            </div>
-        </section>
-
-        <section>
-            <h2>Книга жалоб и&nbsp;предложений</h2>
-            <p>Telegram: <a href="https://t.me/m_danilov" target="_blank">Mikhail Danilov</a>, email: <a href="mailto:m.danilov@gmail.com">m.danilov@gmail.com</a>
-            </p>
-        </section>
+                </div>Online версия
+            </a>
+        </div>
     </div>
+
 </body>
+
 
 </html>
